@@ -1,0 +1,21 @@
+.NavBar{
+    background-color: #272727;
+    height: 56px;
+    box-shadow: 0 4px 2px -2px black;
+    padding-top: 10px;
+    
+}
+.Whole{
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+
+}
+
+a{
+    color: white;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right:15px;
+
+}

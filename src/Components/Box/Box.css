@@ -1,0 +1,116 @@
+section{
+    position: static;
+    
+}
+.center{
+    width:99%
+}
+
+.split {
+    height: 90%;
+    width: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 10;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+.leftSide{
+    padding-top: 0%;
+    width:45%
+}
+.rightSide{
+    width:40%;
+    right: 1em;
+}
+
+.guide{
+        margin: 1;
+      }
+.guide.dashed {
+    list-style-type: none;
+}
+.guide.dashed > li {
+    text-indent: -5px;
+}
+.guide.dashed > li:before {
+    content: "-";
+    text-indent: -1px;
+}
+.MajorBigContainer{
+    height:12%;
+}
+.invisContainerApBox{
+    height:31%;
+}
+.Major-Div-Container{
+    display: block;
+    width:70%;
+    height:40%;
+    background: #333;
+    border-radius: 6px;
+    overflow: hidden;
+
+}
+.Major-Div-Container > div{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    background:transparent;
+    font-size: 20px;
+    border:0;
+    color: yellow
+   
+}
+
+
+#Major-Search-Box{
+    width:60%;
+    background: #333;
+    border-radius: 6px;
+    overflow: hidden;
+
+}
+
+
+#Ap-Search-Box{
+    width:60%;
+    background: #333;
+    border-radius: 6px;
+    overflow: hidden;
+
+}
+.SearchBox{
+    padding-left: 10px;
+    width: 100%;
+    background:transparent;
+    font-size: 30px;
+    border:0;
+    color: #fff;
+}
+
+.Suggestions{
+    border-top: 2px solid #999;
+}
+.SuggestionPanel > div{
+    padding: 15px;
+    font-size: 20px;
+    color: #fff;
+    border-top: 1px solid #667;
+    cursor: pointer;
+}
+.SuggestionPanel > div:hover{
+    background-color: #1e4dd4;
+}
+
+.classList {
+    padding-right: 10px;
+}
+
+.classList > div> div> li:hover{
+    cursor:pointer;
+    text-decoration: line-through
+    
+}

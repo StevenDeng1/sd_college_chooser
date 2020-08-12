@@ -4,6 +4,8 @@ import Box from './Components/Box/Box';
 import Navigation from './Components/Navigation/Navigation';
 import Ap_Courses from './ApCourse';
 import MajorList from './MajorList';
+import CollegeDisplay from './Components/CollegeDisplay/CollegeDisplay';
+
 
 class App extends React.Component{
   constructor(){
@@ -18,12 +20,16 @@ class App extends React.Component{
   }
 
   componentDidMount(){
+
     this.setState({courses:Ap_Courses,
                     majors:MajorList
                   });
+            
 
   }
-  
+  onRouteChange = (route) => {
+    this.setState({route:route});
+  }
   onSearchChange = (event) => {
     if(event.target.id === 'AP'){
     this.setState({inputofAP: event.target.value});  
@@ -32,6 +38,7 @@ class App extends React.Component{
       this.setState({inputofMajor: event.target.value});
     }
   }
+
 
 
  render(){
@@ -48,11 +55,24 @@ class App extends React.Component{
   return( 
     <div>
       <Navigation/>
-      <Box Majors = {MajorSuggestions} Courses={CourseSuggestions} onSearchChange={this.onSearchChange}/>
+  
+      { this.state.route === 'home' ?
+        <div>
+          <Box onRouteChange={this.onRouteChange} Majors = {MajorSuggestions} Courses={CourseSuggestions} onSearchChange={this.onSearchChange}/>
+        </div>
+        :(
+          this.state.route === 'college'
+          ? <CollegeDisplay/>
+
+          : <div>Other </div>
+        )
+      }
+   
   </div>
   )
   
-}
+  
+};
 
 }
 

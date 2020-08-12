@@ -112,7 +112,7 @@ onClick = (cause,ev) =>{
     if(this.state.totalCourses.length===0){
         this.state.totalCourses.push({
             courseName: `${ev.currentTarget.dataset.div_id}`,
-            courseScore:1
+            courseScore:'1'
         });
        // console.log('totalCourses with first addition', this.state.totalCourses);
     }
@@ -129,7 +129,7 @@ onClick = (cause,ev) =>{
         if(!containsElement){
             temp.push({
                 courseName: `${ev.currentTarget.dataset.div_id}`,
-                courseScore:1
+                courseScore:'1'
             });
         }
         //console.log('totalCourses with new addition non first ', this.state.totalCourses);
@@ -180,6 +180,11 @@ onCourseClick = ev =>{
     
 }
 onSubmit = () => {
+    /*
+
+    no major entered
+
+    
     if(this.state.selectedMajor ===''){
         this.setState({submitMessage:'YOU HAVE NOT ENTERED A MAJOR, if not sure click undeclared',
                       messageColor: 'red'
@@ -189,9 +194,34 @@ onSubmit = () => {
         
     }
     else{
-    var myJson = JSON.stringify([this.state.selectedMajor,this.state.totalCourses]);
-    console.log(myJson);
+        */
+        console.log(this.state.totalCourses);
+    fetch('http://localhost:3001/college', {
+        method: 'post',
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify({
+            major: this.state.selectedMajor,
+            courses: this.state.totalCourses
+        })
+
+    })
+/*
+   changing route 
+
+
+    this.props.onRouteChange('college');
+    var json = JSON.stringify({
+        major: this.state.selectedMajor,
+        courses: this.state.totalCourses
+    })
+    console.log(json);
+    //var myJson = JSON.stringify([this.state.selectedMajor,this.state.totalCourses]);
+    //console.log(myJson);
+
+    
     }
+    */
+
 }
 handleChange = ev => {
   //  console.log('course is ', ev.currentTarget.id )
